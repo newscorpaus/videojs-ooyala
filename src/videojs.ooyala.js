@@ -220,7 +220,7 @@
             //
             //  Store this information for callback
             //
-            videoUrls[key] = videojs.util.mergeOptions(videoStream, {
+            videoUrls[key] = videojs.mergeOptions(videoStream, {
                 authorized: thisVideoData.authorized,
                 type: videoType,
                 src: videoSrc
@@ -233,7 +233,7 @@
 
     ooyala = function(options) {
 
-        var settings = videojs.util.mergeOptions(defaults, options),
+        var settings = videojs.mergeOptions(defaults, options),
             player = this;
 
         if (!settings.pcode) {
