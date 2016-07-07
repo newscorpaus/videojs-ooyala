@@ -6,6 +6,11 @@
         hls: 'application/x-mpegURL'
     },
 
+    // in videoJs 5 videojs.util.mergeOptions has been replaced with videojs.mergeOptions
+    // in order to keep the plugin backwards compatible, checking for videojs.mergeOptions
+    // providing fallback to videojs.util.mergeOptions for older video JS versions
+    videojsMerge = videojs.mergeOptions ? videojs.mergeOptions : videojs.util.mergeOptions,
+
     // List of authorisation (error) codes from Ooyala API
     // These are the only ones we need to cater for, we can add the rest in later
     // if we want a unique error message for them
@@ -220,7 +225,7 @@
             //
             //  Store this information for callback
             //
-            videoUrls[key] = videojs.mergeOptions(videoStream, {
+            videoUrls[key] = videojsMerge(videoStream, {
                 authorized: thisVideoData.authorized,
                 type: videoType,
                 src: videoSrc
@@ -233,7 +238,7 @@
 
     ooyala = function(options) {
 
-        var settings = videojs.mergeOptions(defaults, options),
+        var settings = videojsMerge(defaults, options),
             player = this;
 
         if (!settings.pcode) {
