@@ -1,6 +1,6 @@
 {
   "name": "videojs-ooyala",
-  "version": "0.3.2",
+  "version": "0.4.2",
   "description": "Video.js plugin to fetch videos from Ooyala",
   "author": "Peter Mekhaeil <peter.mekhaeil@news.com.au>",
   "scripts": {
