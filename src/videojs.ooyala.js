@@ -111,12 +111,12 @@
             'video/x-mpegurl', 'video/mpegurl', 'application/mpegurl'
         ];
 
-        for(var i = 0; i < canPlay.length; i++) {
-          var canItPlay = canPlay[i];
-          if ((/maybe|probably/i.test(video.canPlayType(canItPlay)))) {
-            // has HLS native support
-            return true;
-          }
+        for (var i = 0; i < canPlay.length; i++) {
+            var canItPlay = canPlay[i];
+            if ((/maybe|probably/i.test(video.canPlayType(canItPlay)))) {
+                // has HLS native support
+                return true;
+            }
         }
         // no native HLS support
         return false;
