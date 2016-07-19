@@ -88,7 +88,38 @@
     },
 
     isHlsNativeSupported = function() {
-        return videojs.Hls && videojs.Hls.supportsNativeHls;
+        // a more comprehensive and standard check for native HLS support
+
+        var video = document.createElement('video');
+
+        // native HLS is definitely not supported if HTML5 video isn't
+        if (!window.videojs.getComponent('Html5').isSupported()) {
+            return false;
+        }
+
+        // HLS manifests can go by many mime-types
+        var canPlay = [
+            // Apple santioned
+            'application/vnd.apple.mpegurl',
+            // Apple sanctioned for backwards compatibility
+            'audio/mpegurl',
+            // Very common
+            'audio/x-mpegurl',
+            // Very common
+            'application/x-mpegurl',
+            // Included for completeness
+            'video/x-mpegurl', 'video/mpegurl', 'application/mpegurl'
+        ];
+
+        for(var i = 0; i < canPlay.length; i++) {
+          var canItPlay = canPlay[i];
+          if ((/maybe|probably/i.test(video.canPlayType(canItPlay)))) {
+            // has HLS native support
+            return true;
+          }
+        }
+        // no native HLS support
+        return false;
     },
 
     canPlayHls = function() {

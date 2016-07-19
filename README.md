@@ -112,6 +112,9 @@ We appreciate that all contribution follow our style guide set in our JSHint and
 
 ## History
 
+### v0.4.1
+* Improved check for native HLS support 
+
 ### v0.4.0
 * VideoJS 5 support 
 * Backward compatiblilty with older Video JS versions
