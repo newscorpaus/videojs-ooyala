@@ -93,8 +93,8 @@ player.ooyala.getMetadata(embedCode, function(err, res) {
 
 This plugin has been tested with:
 
-- Video.Js 4.12.15
-- Brightcove Perform Player v1.24.22
+- Video.Js 5.10.7 & 4.12.15
+- Brightcove Perform Player v5.5.0 & v1.24.22
 
 ## IE Browser compatibility
 
@@ -111,6 +111,9 @@ Bug fixes are always welcome, though for new functionality it's best to raise an
 We appreciate that all contribution follow our style guide set in our JSHint and JSCS using  [Grunt](http://gruntjs.com/).
 
 ## History
+
+### v0.4.1
+* Improved check for native HLS support 
 
 ### v0.4.0
 * VideoJS 5 support 
