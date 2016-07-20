@@ -88,7 +88,8 @@
     },
 
     isHlsNativeSupported = function() {
-        // a more comprehensive and standard check for native HLS support
+        // a more comprehensive check for native HLS support
+        // in line with Hls check from videojs-contrib-hls.js
 
         var video = document.createElement('video');
 
