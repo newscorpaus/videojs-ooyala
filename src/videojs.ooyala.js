@@ -88,13 +88,19 @@
     },
 
     isHlsNativeSupported = function() {
+
+        // for compatibility with videoJS 4.x.x
+        if (videojs.Hls) {
+            return videojs.Hls && videojs.Hls.supportsNativeHls;
+        }
+
         // a more comprehensive check for native HLS support
         // in line with Hls check from videojs-contrib-hls.js
 
         var video = document.createElement('video');
 
         // native HLS is definitely not supported if HTML5 video isn't
-        if (!window.videojs.getComponent('Html5').isSupported()) {
+        if (window.videojs.getComponent && !window.videojs.getComponent('Html5').isSupported()) {
             return false;
         }
 
