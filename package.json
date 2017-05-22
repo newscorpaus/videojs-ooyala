@@ -1,11 +1,12 @@
 {
   "name": "videojs-ooyala",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Video.js plugin to fetch videos from Ooyala",
   "author": "Peter Mekhaeil <peter.mekhaeil@news.com.au>",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "contributors": "Smarajit Dasgupta <smarajit.dasgupta@news.com.au>" ,
   "repository": "https://github.com/newscorpaus/videojs-ooyala.git",
   "homepage": "https://github.com/newscorpaus",
   "keywords": [

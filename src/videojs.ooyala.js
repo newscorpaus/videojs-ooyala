@@ -90,8 +90,12 @@
     isHlsNativeSupported = function() {
 
         // for compatibility with videoJS 4.x.x
-        if (videojs.Hls) {
+        /* if (videojs.Hls) {
             return videojs.Hls && videojs.Hls.supportsNativeHls;
+        } */
+
+        if (videojs.Hls) {
+            return true;
         }
 
         // a more comprehensive check for native HLS support
