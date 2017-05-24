@@ -94,7 +94,9 @@
             return videojs.Hls && videojs.Hls.supportsNativeHls;
         } */
 
-        if (videojs.Hls) {
+        var isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+
+        if (isChrome && videojs.Hls) {
             return true;
         }
 
