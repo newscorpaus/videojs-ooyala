@@ -106,7 +106,7 @@
         var video = document.createElement('video');
 
         // native HLS is definitely not supported if HTML5 video isn't
-        if (window.videojs.getComponent && !window.videojs.getComponent('Html5').isSupported()) {
+        if (videojs.getComponent && !videojs.getComponent('Html5').isSupported()) {
             return false;
         }
 
